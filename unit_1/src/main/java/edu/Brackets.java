@@ -4,7 +4,7 @@ package edu;
  */
 public class Brackets {
     public static void main(String[] args) {
-        System.out.println(brackets("{sd{fd()}[]"));
+        System.out.println(brackets("{sd((fd()}[]"));
     }
     /**
      * Метод проверяет все ли открывающие скобки закрыты. Если какая-нибудь не закрыта, то отображает её.
@@ -19,26 +19,41 @@ public class Brackets {
         char[] a = randomChars.toCharArray();
 
         for (int i = 0; i < randomChars.length(); i++) {
-            if (a[i] == '{' || a[i] == '}') {
+            if (a[i] == '{') {
                 figureBrackets++;
+            } else if (a[i] == '}') {
+                figureBrackets--;
             }
-            if (a[i] == '[' || a[i] == ']') {
+            if (a[i] == '[') {
                 squareBrackets++;
+            } else if (a[i] == ']') {
+                squareBrackets--;
             }
-            if (a[i] == '(' || a[i] == ')') {
+            if (a[i] == '(') {
                 roundBrackets++;
+            } else if (a[i] == ')') {
+                roundBrackets--;
             }
         }
-        if (squareBrackets % 2 != 0) {
+        if (squareBrackets != 0) {
             result = false;
-            System.out.println("Не закрывается " + '[');
-        } else if (figureBrackets % 2 != 0) {
-            result = false;
-            System.out.println("Не закрывается " + '{');
-        } else if (roundBrackets % 2 != 0) {
-            result = false;
-            System.out.println("Не закрывается " + '(');
+            for (int i = 0; i < squareBrackets; i++) {
+                System.out.print(']');
+            }
         }
+        if (figureBrackets != 0) {
+            result = false;
+            for (int i = 0; i < figureBrackets; i++) {
+                System.out.print('}');
+            }
+        }
+        if (roundBrackets != 0) {
+            result = false;
+            for (int i = 0; i < roundBrackets; i++) {
+                System.out.print(')');
+            }
+        }
+        System.out.println();
         return result;
     }
 }

@@ -3,19 +3,18 @@ package edu;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
+
 /**
  * В классе организуется сортировка чисел.
  */
 public class Sorted {
     public static void main(String[] args) {
         ArrayList<Integer> arrayList = new ArrayList<>();
-        arrayList.add(10);
-        arrayList.add(10);
-        arrayList.add(2);
         arrayList.add(5);
-        arrayList.add(5);
-        arrayList.add(1);
-
+        arrayList.add(3);
+        arrayList.add(12387656);
+        arrayList.add(99999999);
         System.out.println(sort(arrayList));
     }
     /**
@@ -25,7 +24,7 @@ public class Sorted {
      */
     public static ArrayList<Integer> sort(ArrayList<Integer> list) {
         ArrayList<Integer> arrayList = new ArrayList<>();
-        Set<Integer> integers = new HashSet<>();
+        Set<Integer> integers = new TreeSet<>();
         integers.addAll(list);
         arrayList.addAll(integers);
         return arrayList;
