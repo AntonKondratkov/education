@@ -9,7 +9,7 @@ public class Brackets {
     /**
      * Метод проверяет все ли открывающие скобки закрыты. Если какая-нибудь не закрыта, то отображает её.
      * @param randomChars Строка из рандомных символов.
-     * @return false or true/
+     * @return false or true.
      */
     public static boolean brackets(String randomChars) {
         boolean result = true;
